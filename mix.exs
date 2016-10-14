@@ -28,7 +28,7 @@ defmodule ExRabbitmq.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:ampq, "0.1.4"}
+      {:amqp, "0.1.4"}
     ]
   end
 end
