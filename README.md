@@ -1,24 +1,23 @@
-# ExRabbitmq
+# ExRabbitMQ
 
-**TODO: Add description**
+[RabbitMQ tutorial](https://www.rabbitmq.com/tutorials/tutorial-one-elixir.html) in elixir using amqp
 
-## Installation
+###### Note:
+* Make sure to have rabbitmq installed and running locally:
+```
+brew install rabbitmq   # Install (OS X)
+rabbitmq-server         # Run server
+```
+* If `rabbitmq-management` plugin is enabled, dashboard is available at `localhost:15672`
+* Use `$ rabbitmqadmin list queues` for command-line convenience.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+## Examples
 
-  1. Add `ex_rabbitmq` to your list of dependencies in `mix.exs`:
+To run the examples, use `mix run`.
 
-    ```elixir
-    def deps do
-      [{:ex_rabbitmq, "~> 0.1.0"}]
-    end
-    ```
+#### Part 1 - Send/Receive from named queue
 
-  2. Ensure `ex_rabbitmq` is started before your application:
-
-    ```elixir
-    def application do
-      [applications: [:ex_rabbitmq]]
-    end
-    ```
-
+```
+mix run lib/send.exs
+mix run lib/receive.exs
+```
