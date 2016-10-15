@@ -7,9 +7,9 @@
 brew install rabbitmq   # Install (OS X)
 rabbitmq-server         # Run server
 ```
-If `rabbitmq-management` plugin is enabled, dashboard is available at `localhost:15672`
 
-Use `$ rabbitmqadmin list queues` for command-line convenience.
+* If `rabbitmq-management` plugin is enabled, dashboard is available at `localhost:15672`
+* Use `$ rabbitmqadmin list queues` for command-line convenience.
 
 ## Examples
 
