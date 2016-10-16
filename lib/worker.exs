@@ -9,6 +9,7 @@ defmodule Worker do
         |> Kernel.*(1000)
         |> :timer.sleep
         IO.puts(" [x] Done.")
+        AMQP.Basic.ack(channel, meta.delivery_tag)
 
         wait_for_messages(channel)
     end
@@ -18,9 +19,9 @@ end
 {:ok, connection} = AMQP.Connection.open
 {:ok, channel}    = AMQP.Channel.open(connection)
 
-AMQP.Queue.declare(channel, "task_queue", durable: true)
+AMQP.Queue.declare(channel, "ex.task_queue", durable: true)
 AMQP.Basic.qos(channel, prefetch_count: 1)
-AMQP.Basic.consume(channel, "task_queue")
+AMQP.Basic.consume(channel, "ex.task_queue")
 
 IO.puts(" [*] Waiting for messages. To exit press CTRL+C CTRL+C")
 
