@@ -29,3 +29,11 @@ mix run lib/receive.exs
 mix run lib/worker.exs
 mix run lib/new_task.exs
 ```
+
+#### Part 3 - Publish/Subscribe
+
+```
+mix run lib/receive_logs.exs > logs_from_rabbit.log
+mix run lib/receive_logs.exs
+mix run lib/emit_log.exs
+```
