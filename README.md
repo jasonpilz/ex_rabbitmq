@@ -22,3 +22,10 @@ To run the examples, use `mix run`.
 mix run lib/send.exs
 mix run lib/receive.exs
 ```
+
+#### Part 2 - Work queues
+
+```
+mix run lib/worker.exs
+mix run lib/new_task.exs
+```
