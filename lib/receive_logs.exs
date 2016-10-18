@@ -1,10 +1,10 @@
 defmodule ReceiveLogs do
-  def wait_for_messsages(channel) do
+  def wait_for_messages(channel) do
     receive do
       {:basic_deliver, payload, _meta} ->
         IO.puts(" [x] Received #{payload}")
 
-        wait_for_messsages(channel)
+        wait_for_messages(channel)
     end
   end
 end
